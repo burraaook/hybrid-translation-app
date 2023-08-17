@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Spinner
+        android:id="@+id/targetSpinner"
+        android:layout_width="119dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="29dp"
+        app:layout_constraintBottom_toTopOf="@+id/translationOutputText"
+        app:layout_constraintEnd_toStartOf="@+id/updateButton"
+        app:layout_constraintStart_toEndOf="@+id/sourceSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTarget" />
+
+    <EditText
+        android:id="@+id/translationInputText"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/material_dynamic_tertiary60"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Enter the text will be translated"
+        android:inputType="textMultiLine"
+        android:textColorHint="#212121"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/translationOutputText"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginBottom="7dp"
+        android:background="@color/material_dynamic_secondary70"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Translation result will be here"
+        android:inputType="textMultiLine"
+        android:textColorHint="#283593"
+        app:layout_constraintBottom_toTopOf="@+id/navigateButton1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateButton" />
+
+    <Button
+        android:id="@+id/translateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="5dp"
+        android:text="Translate"
+        app:layout_constraintBottom_toTopOf="@+id/updateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/translationInputText"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="117dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="31dp"
+        android:text="Update Glossary"
+        app:layout_constraintBottom_toTopOf="@+id/translationOutputText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/targetSpinner" />
+
+    <TextView
+        android:id="@+id/textViewSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="9dp"
+        android:background="@color/material_dynamic_secondary60"
+        android:text="Source"
+        android:textColor="#424242"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/sourceSpinner"
+        app:layout_constraintEnd_toStartOf="@+id/textViewTarget"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/translationInputText" />
+
+    <TextView
+        android:id="@+id/textViewTarget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+
+        android:layout_marginEnd="103dp"
+        android:layout_marginBottom="9dp"
+        android:background="@color/material_dynamic_secondary60"
+        android:text="Target"
+        android:textColor="#424242"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/targetSpinner"
+        app:layout_constraintEnd_toStartOf="@+id/translateButton"
+        app:layout_constraintStart_toEndOf="@+id/textViewSource"
+        app:layout_constraintTop_toBottomOf="@+id/translationInputText" />
+
+    <Spinner
+        android:id="@+id/sourceSpinner"
+        android:layout_width="119dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="29dp"
+        app:layout_constraintBottom_toTopOf="@+id/translationOutputText"
+        app:layout_constraintEnd_toStartOf="@+id/targetSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSource" />
+
+    <ImageView
+        android:id="@+id/reverseImage"
+        android:layout_width="45dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/targetSpinner"
+        app:layout_constraintEnd_toStartOf="@+id/translateButton"
+        app:layout_constraintStart_toEndOf="@+id/textViewTarget"
+        app:layout_constraintTop_toBottomOf="@+id/translationInputText"
+        app:srcCompat="@drawable/reverse" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="135dp"
+        android:layout_height="171dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.133" />
+
+    <Button
+        android:id="@+id/navigateButton1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="Go to Translator List"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/translationOutputText" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

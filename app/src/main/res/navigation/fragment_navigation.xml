@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_navigation"
+    app:startDestination="@id/translationListFragment">
+
+    <fragment
+        android:id="@+id/mlkitFragment"
+        android:name="com.yilmaz.hybridtranslationapp.MLKITFragment"
+        android:label="fragment_translation"
+        tools:layout="@layout/fragment_m_l_k_i_t" >
+        <action
+            android:id="@+id/action_mlkitFragment_to_translationListFragment"
+            app:destination="@id/translationListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/GCFragment"
+        android:name="com.yilmaz.hybridtranslationapp.GCFragment"
+        android:label="GCFragment" >
+        <action
+            android:id="@+id/action_GCFragment_to_translationListFragment"
+            app:destination="@id/translationListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/translationListFragment"
+        android:name="com.yilmaz.hybridtranslationapp.TranslationListFragment"
+        android:label="fragment_translation_list"
+        tools:layout="@layout/fragment_translation_list" >
+        <action
+            android:id="@+id/action_translationListFragment_to_GCFragment"
+            app:destination="@id/GCFragment" />
+        <action
+            android:id="@+id/action_translationListFragment_to_mlkitFragment"
+            app:destination="@id/mlkitFragment" />
+        <action
+            android:id="@+id/action_translationListFragment_to_advancedMLKITFragment"
+            app:destination="@id/advancedMLKITFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/advancedMLKITFragment"
+        android:name="com.yilmaz.hybridtranslationapp.AdvancedMLKITFragment"
+        android:label="fragment_advanced_m_l_k_i_t"
+        tools:layout="@layout/fragment_advanced_m_l_k_i_t" >
+        <action
+            android:id="@+id/action_advancedMLKITFragment_to_translationListFragment"
+            app:destination="@id/translationListFragment" />
+    </fragment>
+</navigation>

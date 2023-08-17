@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MLKITFragment">
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigateButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout3">
+
+        <TextView
+            android:id="@+id/translationOutputText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/material_dynamic_secondary70"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Translation result will be here"
+            android:inputType="textMultiLine"
+            android:textSize="22sp" />
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="412dp"
+        android:layout_height="210dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="500dp"
+        android:background="@color/material_dynamic_tertiary60"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/translationInputText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Enter the text will be translated"
+            android:inputType="textMultiLine"
+            android:textSize="22sp"/>
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/translationButton">
+
+        <TextView
+            android:id="@+id/identifiedLanguageText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="No Detection"
+            android:textColor="@color/material_dynamic_primary100"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="-2dp"
+            tools:layout_editor_absoluteY="373dp" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/translationButton"
+        android:layout_width="116dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="16dp"
+        android:text="Translate"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/targetLanSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/reverseImage" />
+
+    <Spinner
+        android:id="@+id/targetLanSpinner"
+        android:layout_width="119dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="19dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout3"
+        app:layout_constraintEnd_toStartOf="@+id/translationButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageView
+        android:id="@+id/reverseImage"
+        android:layout_width="72dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/reverse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+    <Spinner
+        android:id="@+id/sourceSpinner"
+        android:layout_width="119dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginBottom="19dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="107dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/material_dynamic_secondary60"
+        android:text="Source"
+        android:textAlignment="center"
+        android:textColor="#424242"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/sourceSpinner"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="107dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/material_dynamic_secondary60"
+        android:text="Target"
+        android:textAlignment="center"
+        android:textColor="#424242"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/targetLanSpinner"
+        app:layout_constraintEnd_toStartOf="@+id/reverseImage"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/navigateButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="42dp"
+        android:text="Go to translator list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
